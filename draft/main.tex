@@ -1,0 +1,136 @@
+\documentclass[12pt]{article}
+\pdfoutput=1
+
+\usepackage{jheppub}
+\usepackage{graphicx,epsfig,amsmath,amssymb,booktabs}
+\usepackage{caption,subcaption}
+\usepackage{xspace}
+
+% \setlength\parindent{0pt}
+
+\newlength{\unitcharwidth}
+\settowidth{\unitcharwidth}{1}
+
+\newlength{\unitsuperscriptwidth}
+\settowidth{\unitsuperscriptwidth}{\scriptsize 1}
+
+
+%%% Macros
+\newcommand{\rd}{\ensuremath{\mathrm{d}}}
+\newcommand{\eqn}[1]{Eq.~(\ref{#1})}
+\newcommand{\Gmu}{\ensuremath{G_\mu}}
+\newcommand{\alphazero}{\ensuremath{\alpha(0)}}
+\newcommand{\alphaGmu}{\ensuremath{\alpha_{\Gmu}}}
+\newcommand{\alphas}{\ensuremath{\alpha_s}}
+\newcommand{\aaa}{\ensuremath{\gamma\gamma\gamma}}
+\newcommand{\aaw}{\ensuremath{\gamma\gamma W}}
+\newcommand{\aaz}{\ensuremath{\gamma\gamma Z}}
+\newcommand{\shortequal}{\ensuremath{\!\!\!=\!\!\!}}
+\newcommand{\pT}{\ensuremath{p_\text{T}}}
+\newcommand{\pTveto}{\ensuremath{p_\text{T,jet}^\text{veto}}}
+\newcommand{\order}{\ensuremath{\mathcal{O}}}
+\newcommand{\vP}{\ensuremath{\vphantom{\int_a^b}}}
+
+\newcommand{\Sherpa}{S\scalebox{0.8}{HERPA}\xspace}
+\newcommand{\GoSam}{G\scalebox{0.8}{O}S\scalebox{0.8}{AM}\xspace}
+\newcommand{\Recola}{R\scalebox{0.8}{ECOLA}\xspace}
+\newcommand{\OpenLoops}{O\scalebox{0.8}{PEN}L\scalebox{0.8}{OOPS	}\xspace}
+\newcommand{\QGraf}{QG\scalebox{0.8}{RAF}\xspace}
+\newcommand{\FORM}{F\scalebox{0.8}{ORM}\xspace}
+\newcommand{\Spinney}{S\scalebox{0.8}{PINNEY}\xspace}
+\newcommand{\Ninja}{N\scalebox{0.8}{INJA}\xspace}
+\newcommand{\Samurai}{S\scalebox{0.8}{AMURAI}\xspace}
+\newcommand{\GolemNF}{G\scalebox{0.8}{OLEM}95\xspace}
+\newcommand{\OneLoop}{O\scalebox{0.8}{NE}L\scalebox{0.8}{OOP}\xspace}
+\newcommand{\FastJet}{F\scalebox{0.8}{AST}J\scalebox{0.8}{ET}\xspace}
+
+\newcommand{\DIPHOX}{D\scalebox{0.8}{IPHOX}\xspace}
+\newcommand{\MCFM}{M\scalebox{0.8}{CFM}\xspace}
+\newcommand{\twogammaMC}{2\scalebox{0.8}{gammaMC}\xspace}
+\newcommand{\VBFatNLO}{V\scalebox{0.8}{BF@NLO}\xspace}
+\newcommand{\RESBOS}{R\scalebox{0.8}{ESBOS}\xspace}
+
+\newcommand{\QCDpEW}{QCD+EW}
+\newcommand{\QCDtEW}{QCD$\times$EW}
+\newcommand{\deltaQCD}{\ensuremath{\delta_\text{QCD}}}
+\newcommand{\deltaEW}{\ensuremath{\delta_\text{EW}}}
+\newcommand{\muR}{\ensuremath{\mu_{\mathrm{R}}}}
+\newcommand{\muF}{\ensuremath{\mu_{\mathrm{F}}}}
+
+\newcommand{\comment}[1]{\textbf{#1}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Next-to-leading order electroweak corrections to diphoton production in association with two bottom jets}
+
+\author[a]{Nicolas Greiner,}
+\author[b]{Marek Sch\"onherr}
+
+
+\affiliation[a]{Physik Institut, Universit{\"a}t Z{\"u}rich, Winterthurerstr.190, 8057 Z\"urich, Switzerland}
+\affiliation[b]{Theoretical Physics Department, CERN, 1211 Geneva 23, Switzerland}
+
+
+\preprint{
+  \small
+  \begin{flushright}
+    ZU--TH ??/17\\ CERN-TH-2017-???
+  \end{flushright}
+}
+
+\abstract{
+  $\gamma\gamma bb$ is awesome!
+}
+ 
+
+\keywords{EW corrections, Photon, NLO, Jets}
+
+\hypersetup{
+  pdftitle = {Next-to-leading order electroweak corrections to diphoton production in association with two bottom jets},
+  pdfauthor = {Nicolas Greiner, Marek Schoenherr}
+}
+
+
+\begin{document}
+
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Introduction
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{intro}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Calculational Setup
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{setup}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Results
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{results}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Conclusions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{conclusions}
+
+ 
+
+\section*{Acknowledgements}
+N.G.\ was supported by the Swiss National Science Foundation under contract
+PZ00P2\_154829. M.S.\ was supported by PITN--GA--2012--315877 ({\it MCnet}).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\bibliographystyle{amsunsrt_mod}
+\bibliography{journal}
+
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
