@@ -44,7 +44,9 @@
         Input_Particles 98;
         Jet_Algorithm antikt PT:30. R:0.4 ETA:4.5;
         Identify_As 22 ET>0.5[rel];
-        NMin 2;
+        Identify_As 905 E>0[rel] Mode:2;
+        NMin 0;
+        NMin 905 2;
       }
     }
   }
