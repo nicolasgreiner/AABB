@@ -39,6 +39,7 @@
     Isolation_Selector {
       Isolation_Particles 22;
       Rejection_Particles 93;
+      Rejection_Particles 905;
       Isolation_Parameters R:0.1 EMAX:0.5 EXP:1 ETA:5.0 PT=30.;
       NMin 2;
       Jet_Selector {
