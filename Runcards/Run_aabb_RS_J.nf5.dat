@@ -3,6 +3,7 @@
   MI_HANDLER None; FRAGMENTATION None; ME_QED None;
   SHOWER_GENERATOR None; BEAM_REMNANTS 0;
   INTRINSIC_KPERP None;
+  $RUNNAME:=aabb;    
 
   ME_SIGNAL_GENERATOR Amegic;
   EVENT_GENERATION_MODE Weighted;
@@ -10,6 +11,10 @@
   SHERPA_CPP_PATH Process.J;
   SHERPA_LDADD SherpaIsolatedParticleScaleSetter;
   MEH_NLOADD 0;
+  
+  ANALYSIS Rivet;
+  ANALYSIS_WRITEOUT_INTERVAL 0.01;
+  ANALYSIS_OUTPUT Analysis/$RUNNAME_$NLOPART/;          
 
   BEAM_1 2212; BEAM_ENERGY_1 6500.;
   BEAM_2 2212; BEAM_ENERGY_2 6500.;
@@ -20,11 +25,12 @@
 
   SCF:=1; FSF:=SCF; RSF:=SCF;
   SCLDEF:=0.25*(Abs2(p[2]+p[3])+sqr(sqrt(H_T2)-PPerp(p[2])-PPerp(p[3])));
-  SCALES ISOLATED[Kf:22,Rej:93,PT:30.,Eta:5.0,R:0.4,EMax:0.5,Exp:1,NMin:2]{FSF*SCLDEF}{RSF*SCLDEF};
+  SCALES ISOLATED[Kf:22,Rej:93,PT:20.,Eta:5.0,R:0.4,EMax:0.5,Exp:1,NMin:2]{FSF*SCLDEF}{RSF*SCLDEF};
   #SCALES VAR{FSF*SCLDEF}{RSF*SCLDEF};
 
   EW_SCHEME 1;
   ALPHAQED_DEFAULT_SCALE 0;
+  DIPOLE_BORN_FLAVOUR_RESTRICTIONS 22 2;             
 
   PARTICLE_CONTAINER 905[Q:3] bottom 5 -5;
 }(run);
@@ -45,11 +51,11 @@
     Isolation_Selector {
       Isolation_Particles 22;
       Rejection_Particles 93;
-      Isolation_Parameters R:0.1 EMAX:0.5 EXP:1 ETA:5.0 PT=30.;
+      Isolation_Parameters R:0.1 EMAX:0.5 EXP:1 ETA:5.0 PT=20.;
       NMin 2;
       Jet_Selector {
         Input_Particles 98;
-        Jet_Algorithm antikt PT:30. R:0.4 ETA:4.5;
+        Jet_Algorithm antikt PT:20. R:0.4 ETA:4.5;
         Identify_As 22 ET>0.5[rel];
         Identify_As 905 E>0[rel] Mode:2;
         NMin 0;
@@ -58,3 +64,10 @@
     }
   }
 }(selector)
+
+(analysis){
+BEGIN_RIVET{
+USE_HEPMC_SHORT 1;
+-a MC_AABB_NLOEW;
+} END_RIVET
+}(analysis)

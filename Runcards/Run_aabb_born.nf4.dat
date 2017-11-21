@@ -12,7 +12,7 @@
   BEAM_2 2212; BEAM_ENERGY_2 6500.;
 
   PDF_LIBRARY LHAPDFSherpa;
-  PDF_SET CT14nlo;
+  PDF_SET CT14nlo_NF4;
   PDF_SET_VERSION 0;
 
   SCF:=1; FSF:=SCF; RSF:=SCF;
@@ -31,7 +31,7 @@
   Process 93 93 -> 22 22 905 905;
   Order (2,2);
   Print_Graphs Graphs;
-  Enhance_Function VAR{PPerp2(p[2])+PPerp2(p[3])+Abs2(p[2]+p[3])};
+  #Enhance_Function VAR{PPerp2(p[2])+PPerp2(p[3])+Abs2(p[2]+p[3])};
   End process;
 }(processes);
 
@@ -42,12 +42,12 @@
       Isolation_Particles 22;
       Rejection_Particles 93;
       Rejection_Particles 905;
-      Isolation_Parameters R:0.1 EMAX:0.5 EXP:1 ETA:5.0 PT=30.;
+      Isolation_Parameters R:0.1 EMAX:0.5 EXP:1 ETA:5.0 PT=20.;
       NMin 2;
       Jet_Selector {
         Input_Particles 98;
         Input_Particles 905;
-        Jet_Algorithm antikt PT:30. R:0.4 ETA:4.5;
+        Jet_Algorithm antikt PT:20. R:0.4 ETA:4.5;
         Identify_As 22 ET>0.5[rel];
         Identify_As 905 E>0[rel] Mode:2;
         NMin 0;
@@ -56,3 +56,10 @@
     }
   }
 }(selector)
+
+(analysis){
+BEGIN_RIVET{
+USE_HEPMC_SHORT 1;
+-a MC_AABB_NLOEW;
+} END_RIVET
+}(analysis)
