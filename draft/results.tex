@@ -1,3 +1,36 @@
 \section{Results}
 \label{sec:results}
-
+In this section we present numerical results for the NLO EW 
+corrections to the production of a diphoton pair in 
+association with two bottom jets at the LHC at a centre-of-mass energy of 13\,TeV. 
+To assess the importance of the bottom quark mass we calculated this process for both
+massless and massive $b$-quarks.
+All results are obtained in the Standard Model using the complex-mass 
+scheme \cite{Denner:2005fg} with the following input parameters
+\begin{center}
+  \begin{tabular}{rclrcl}
+    $\alphazero$ &\shortequal& $1/137.03599976$  \qquad &&& \\
+    $\Gmu$ &\shortequal& $1.1663787\times 10^{-5}\; \text{GeV}^2$ &&& \\
+    $m_W$ &\shortequal& $80.385\; \text{GeV}$       & $\Gamma_W$ &\shortequal& $2.085\; \text{GeV}$ \\
+    $m_Z$ &\shortequal& $91.1876\; \text{GeV}$      & $\Gamma_Z$ &\shortequal& $2.4952\; \text{GeV}$ \\
+    $m_h$ &\shortequal& $125.0\; \text{GeV}$        & $\Gamma_h$ &\shortequal& $0$\\
+    $m_t$ &\shortequal& $173.2\; \text{GeV}$        & $\Gamma_t$ &\shortequal& $0$\;.
+  \end{tabular}
+\end{center}
+In the case of a massive $b$-quark, its mass has been set to
+\begin{equation}
+m_b = 4.75 \; \text{GeV}.
+\end{equation}
+All other lepton and parton masses and widths are set to zero. 
+In the case where the $b$-quark is massless
+we use the \textsc{CT14nlo} PDF set with $\alphas(m_Z)=0.118$
+\cite{Dulat:2015mca}, interfaced through LHAPDF6 \cite{Buckley:2014ana}. 
+For the massive case we employed the  4-flavor PDF set \textsc{CT14nlo\_NF4} with $\alphas(m_Z)=0.113$
+In principle one also has to take photon induced processes into account, however as we will show
+later in this next section, their contributions are negligible which justifies the use of pure QCD pdf sets.\\
+We define our central scales through
+\begin{equation}
+  \label{eq:murfdef}
+    \muR^0 = \muF^0 = \frac{1}{2}\sqrt{m^2_{\gamma \gamma} +\left( \sum_i p_{T,i}\right)^2}\;,
+\end{equation}
+where the sum runs over the final state partons.
