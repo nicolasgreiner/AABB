@@ -10,7 +10,7 @@ scheme \cite{Denner:2005fg} with the following input parameters
 \begin{center}
   \begin{tabular}{rclrcl}
     $\alphazero$ &\shortequal& $1/137.03599976$  \qquad &&& \\
-    $\Gmu$ &\shortequal& $1.1663787\times 10^{-5}\; \text{GeV}^2$ &&& \\
+%     $\Gmu$ &\shortequal& $1.1663787\times 10^{-5}\; \text{GeV}^2$ &&& \\
     $m_W$ &\shortequal& $80.385\; \text{GeV}$       & $\Gamma_W$ &\shortequal& $2.085\; \text{GeV}$ \\
     $m_Z$ &\shortequal& $91.1876\; \text{GeV}$      & $\Gamma_Z$ &\shortequal& $2.4952\; \text{GeV}$ \\
     $m_h$ &\shortequal& $125.0\; \text{GeV}$        & $\Gamma_h$ &\shortequal& $0$\\
@@ -22,15 +22,98 @@ In the case of a massive $b$-quark, its mass has been set to
 m_b = 4.75 \; \text{GeV}.
 \end{equation}
 All other lepton and parton masses and widths are set to zero. 
-In the case where the $b$-quark is massless
-we use the \textsc{CT14nlo} PDF set with $\alphas(m_Z)=0.118$
-\cite{Dulat:2015mca}, interfaced through LHAPDF6 \cite{Buckley:2014ana}. 
-For the massive case we employed the  4-flavor PDF set \textsc{CT14nlo\_NF4} with $\alphas(m_Z)=0.113$
-In principle one also has to take photon induced processes into account, however as we will show
-later in this next section, their contributions are negligible which justifies the use of pure QCD pdf sets.\\
+The width of the top quark can safely be neglected as there 
+are no diagrams with a $s$-channel resonance that can go on-shell. 
+At the same time, while Higgs-boson contributions are absent in 
+the calculation with a massless $b$ quark, they enter in the 
+presence of a $b$ quark mass.
+
+Events are selected by requiring the presence of at least two 
+isolated photons defined through the smooth cone isolation 
+criterion \cite{Frixione:1998jh}. 
+This isolation criterion puts an upper limit on the hadronic 
+actiivity in a cone of size $R_\gamma$ around a photon
+\begin{equation}
+  \begin{split}
+    E_\text{had,max}(r_\gamma)
+    \,=\;&
+      \epsilon\,\pT^\gamma
+      \left(\frac{1-\cos r_\gamma}{1-\cos R_\gamma}\right)^n\;.
+  \end{split}
+\end{equation}
+Therein, $r_\gamma$ denotes the angular separation between the photon 
+and the parton, and
+\begin{equation}
+  \begin{split}
+    R_\gamma=0.4\;,
+    \qquad
+    \epsilon=0.05\;,
+    \qquad
+    n=1
+  \end{split}
+\end{equation}
+are free parameters. 
+Of those, at least two photons are required to lie in the fiducial 
+volume given by 
+\begin{equation}
+  \begin{split}
+    \pT^\gamma > 30\,\text{GeV}\;,
+    \qquad
+    |\eta_\gamma| < 2.5\;.
+  \end{split}
+\end{equation}
+Please note, that in NLO EW calculations more than two isolated photons 
+may be found fulfilling the above criteria.
+The two isolated photons in the fiducial volume with the largest 
+transverse momenta will be subsequently referred to as leading and 
+subleading photon, $\gamma_1$ and $\gamma_2$.
+All remaining partons and non-isolated photons are used to build 
+jets with the anti-$k_t$ \cite{Cacciari:2008gp} as implemented 
+in \textsc{FastJet} \cite{Cacciari:2011ma} with $R=0.4$. 
+We require the presence of at least two $b$ jets with 
+\begin{equation}
+  \begin{split}
+    \pT^j > 20\,\text{GeV}\;,
+    \qquad
+    |\eta_j| < 4.4\;.
+  \end{split}
+\end{equation}
+In the calculation using massless $b$ quarks, jets containing an equal 
+number of $b$ and $\bar{b}$ quarks are not tagged as $b$ jets.
+\comment{MS: Clarify: $b$-jets out to 4.4?}
+
 We define our central scales through
 \begin{equation}
   \label{eq:murfdef}
     \muR^0 = \muF^0 = \frac{1}{2}\sqrt{m^2_{\gamma \gamma} +\left( \sum_i p_{T,i}\right)^2}\;,
 \end{equation}
-where the sum runs over the final state partons.
+where the sum runs over all final state partons and non-identified photons 
+while $m_{\gamma\gamma}$ is defined as the invariant mass of the 
+leading and subleading isolated photon defined above.
+To estimate the uncertainty originating in yet-to-be-calculated 
+higher order contributions we use the scale-dependence of the 
+differential cross section as a proxy, varying both the 
+renormalisation and factorisation 
+independently by the conventional factor of two (excluding points 
+where their ratio is larger than two) to form an uncertainy envelope.
+In the case where the $b$-quark is massless
+we use the \textsc{CT14nlo} PDF set with $\alphas(m_Z)=0.118$
+\cite{Dulat:2015mca}, interfaced through \textsc{Lhapdf6} \cite{Buckley:2014ana}. 
+For the massive case we employed the  4-flavor PDF set \textsc{CT14nlo\_NF4} with $\alphas(m_Z)=0.113$
+In principle at NLO EW one also has to take photon induced processes 
+into account. 
+Their LO equivalents are negligible, however, justifying the use of 
+pure QCD PDF sets, cf.\ Sec.\ \ref{sec:results:subLO-aind}.
+
+
+All distributions have been analysed using \textsc{Rivet} \cite{Buckley:2010ar}.
+
+\subsection{Fiducial cross sections}
+\label{sec:results:xsecs}
+
+\subsection{Differential distributions}
+\label{sec:results:dists}
+
+\subsection{Subleading Born contributions and photon induced processes}
+\label{sec:results:subLO-aind}
+

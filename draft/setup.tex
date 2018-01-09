@@ -1,9 +1,10 @@
 \section{Calculational setup}
 \label{sec:setup}
+
 The results presented in this paper have been obtained by combining the two tools
 \GoSam~\cite{Cullen:2011ac,Cullen:2014yla} and \Sherpa~\cite{Gleisberg:2008ta}
-which allows for a fully automated calculation of cross section and observables and next-to-leading order in QCD as well
-as in the electroweak coupling.
+allowing for a fully automated calculation of cross section and observables and 
+next-to-leading order in QCD as well as in the electroweak coupling.
 \GoSam is a package which generates the code for the numerical evaluation of
 the one loop scattering amplitudes starting from the Feynman diagrams,
 generated with \QGraf~\cite{Nogueira:1991ex} and further processed with
@@ -20,17 +21,18 @@ tensor integral reduction as implemented in
 \GolemNF~\cite{Heinrich:2010ax,Binoth:2008uq,Cullen:2011kv,Guillet:2013msa}.
 We have used \OneLoop~\cite{vanHameren:2010cp} to evaluate the scalar integrals.
 
-\Sherpa, on the other hand, provides the tree-level matrix 
-elements, infrared subtraction, process management and phase-space 
-integration of all contributions to all processes considered in 
-this publication through its tree-level matrix element generator 
+The tree-level matrix elements as well as the infrared subtraction, 
+process management and phase-space integration of all contributing 
+partonic channels, on the other hand, are provided by \Sherpa 
+through its tree-level matrix element generator 
 \textsc{Amegic} \cite{Krauss:2001iv}. 
-Its inbuilt infrared subtraction is performed in the QED 
+The subtraction of infrared QCD and QED divergences for both the 
+calculation with massless and massive $b$-quarks are performed using a 
 generalisation of the Catani-Seymour scheme~\cite{Catani:1996vz,
-  Dittmaier:1999mb,Gleisberg:2007md,Kallweit:2014xda,
-  Kallweit:2015dum,Kallweit:2017khh,Schonherr:2017xxx}
-and includes the appropriate initial state mass factorisation 
-counter terms.
+  Dittmaier:1999mb,Catani:2002hc,Gleisberg:2007md,Archibald:2011nca,
+  Kallweit:2014xda,Kallweit:2015dum,Kallweit:2017khh,Schonherr:2017},
+the appropriate initial state mass factorisation counter terms 
+are included.
 Both programs, \Sherpa and \GoSam, are interfaced through a 
 dedicated interface based on the 
 Binoth Les Houches Accord~\cite{Binoth:2010xt,Alioli:2013nda}. 
@@ -38,6 +40,5 @@ Cross-checks of the tree-level matrix elements of \GoSam and
 \Sherpa and the renormalized pole coefficients of the virtual 
 corrections of \GoSam and the infrared poles of \Sherpa have 
 been performed for several phase space points spanning 
-multiple kinematic regimes and we have found excellent 
-agreement.
+multiple kinematic regimes and excellent agreement has been found.
 
